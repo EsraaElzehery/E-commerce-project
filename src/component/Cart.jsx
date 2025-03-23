@@ -35,7 +35,7 @@ useEffect(()=>
 
   ) : (
     <div className="">
-        <div className="  border-b-1 border-gray-600 grid  grid-cols-2 items-center justify-evenly py-3 ">
+        <div className="  border-b-1 border-gray-600 hidden md:grid  grid-cols-2 items-center justify-evenly py-3 ">
 <div className="flex items-center md:gap-18 md:px-6 gap-2   " >
 <h2 className="md:font-semibold md:text-xl text-sm">Product</h2>
 <h2 className="md:font-semibold md:text-xl text-sm">Title</h2>
@@ -63,7 +63,7 @@ useEffect(()=>
           if(cartItems.length > 0){
 return(
   
-    <div key={item.id} className="grid grid-cols-2  items-center border-b-1 border-gray-400 md:py-3 py-1 ">
+    <div key={item.id} className="hidden md:grid grid-cols-2  items-center border-b-1 border-gray-400 md:py-3 py-1 ">
       <div className="items-center flex md:gap-18 gap-6 px-5 ">
       <img src={item.image} className="md:w-16 w-10  rounded-md"/>
 <h1 className="md:text-lg text-gray-700 w-[100%]">{item.name}</h1>
@@ -93,7 +93,7 @@ return(
 
       }
     
-<div className="py-20 space-y-5 md:px-0 px-4 ">
+<div className="hidden md:block py-20 space-y-5 md:px-0 px-4 ">
   
   <h1 className="font-semibold text-black text-xl">Cart Totals</h1>
 <div className="flex justify-between items-center border-b-1 md:w-[50%] pb-4 border-gray-400 ">
