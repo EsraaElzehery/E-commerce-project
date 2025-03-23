@@ -17,9 +17,9 @@ const dispatch = useDispatch();
            src={product.image} className='rounded-md w-full mx-auto'/>
 
 
-<div className='  items-center mx-auto  opacity-0 group-hover:opacity-100 absolute gap-4 justify-center z-50
- bg-white/70 bg-opacity-100 rounded-md px-2  overflow-hidden bottom-0 w-full  transform 
- translate-y-full transition-transform duration-300 group-hover:translate-y-0'>
+<div className='  items-center  mx-auto opacity-100 lg:opacity-0  absolute gap-4 justify-center z-20 
+ bg-white/70 bg-opacity-100 rounded-md px-2  bottom-0 md:group-hover:translate-y-0 w-full md:transform md:translate-y-full
+  md:transition-transform  md:duration-300 md:group-hover:opacity-100'>
 
    
    <div className="flex items-center gap-3 md:gap-6 justify-evenly  md:py-6 py-4 pr-4 ">
@@ -27,7 +27,7 @@ const dispatch = useDispatch();
     w-5 h-5 text-red-600 hover:text-red-500"/></button>
    <Link to={`/products/${product.id}`}>  <button className=" rounded-md
     cursor-pointer text-sm md:text-lg text-white py-1 px-2 bg-red-600 hover:bg-red-500 flex justify-center
-      items-center">See More<span className="text-center flex items-center pl-1 md:pl-2 pt-1 
+      items-center">Details<span className="text-center flex items-center pl-1 md:pl-2 pt-1 
     right-10  justify-center"> <FaLongArrowAltRight className=""/></span>
    </button> </Link>
    </div>
