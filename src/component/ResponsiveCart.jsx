@@ -17,7 +17,7 @@ useEffect(()=>
 
   return (
 <div className="md:hidden block">
-    <div className="place-items-center py-30 space-y-4 ">
+    <div className="place-items-center py-15 space-y-4 ">
  {    
 
 cartItems.map((item)=>{
