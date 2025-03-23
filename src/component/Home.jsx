@@ -1,7 +1,6 @@
 import HeroBanner from '../assets/HeroBanner.jpg'
 import Features from './Features'
 import Footer from './Footer'
-import MidBanner from './midBanner'
 import NewCollection from './NewCollection'
 import Product from './Product'
 
@@ -28,7 +27,7 @@ export default function Home() {
     </div>
     
     <NewCollection/>
-    <MidBanner/>
+  
    <Product/>
    <Features/>
   
