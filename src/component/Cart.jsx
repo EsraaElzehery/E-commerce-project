@@ -29,7 +29,7 @@ useEffect(()=>
   cartItems.length === 0 ? (
 
 <div className="flex items-center py-20 px-2 justify-center">
-  <img src={EmptyCart} className="w-80 h-80 md:w-100 md:h-100" />
+  <img src={EmptyCart} className="w-80 h-80 md:w-100 md:h-100 md:block hidden " />
 </div>
 
 
