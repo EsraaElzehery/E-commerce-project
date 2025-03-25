@@ -4,11 +4,10 @@ import { CiSquareMinus } from "react-icons/ci";
 import { CiSquarePlus } from "react-icons/ci";
 import {decreaseQuantity, increaseQuantity, removeFromCart } from '../redux/Reducers/cartSlice'
 import { useEffect } from "react";
-
+import EmptyCart from '../assets/EmptyCart.png'
 export default function ResponsiveCart() {
-
-  const cartItems = useSelector((state)=> state.cart.cartItems)
   const totalPrice = useSelector((state)=> state.cart.totalPrice)
+  const cartItems = useSelector((state) => state.cart.cartItems)
 const dispatch = useDispatch();
 
 useEffect(()=>
@@ -16,15 +15,27 @@ useEffect(()=>
 )
 
   return (
-<div className="md:hidden block">
-    <div className="place-items-center py-15 space-y-4 ">
+<div>
+
+{
+  cartItems.length === 0 ? (
+
+<div className="flex items-center py-20 px-2 justify-center">
+  <img src={EmptyCart} className="w-80 h-80 md:w-100 md:h-100 md:hidden block" />
+</div>
+  )
+:
+(
+
+  <div className="md:hidden block">
+    <div className="place-items-center py-30 space-y-4 ">
  {    
 
 cartItems.map((item)=>{
                 if(cartItems.length > 0){
                     return(
                         <>
-      <div key={item.id} className="px-4 flex items-center justify-between space-y-4 gap-6 border-b-1 ">
+      <div key={item.id} className=" px-4 flex items-center justify-between space-y-4 gap-6 border-b-1 ">
                             <div className=" w-[60%] space-y-1">
 <img src={item.image} className="w-20 h-25 rounded-md"/>
 <h1 className="text-sm text-gray-700 w-50">{item.name}</h1>
@@ -48,7 +59,8 @@ cartItems.map((item)=>{
                 }
             })
           }
-        <div className="px-4 py-8 space-y-3 ">
+        
+        <div className="block md:hidden px-4 py-8 space-y-3 ">
         <h1 className="font-semibold text-black text-xl">Cart Totals</h1>
 <div className="flex justify-between items-center border-b-1 w-full pb-4 border-gray-400 ">
   <h2 >Subtotal</h2>
@@ -69,5 +81,8 @@ cartItems.map((item)=>{
     </div>
        
           </div>
+        )
+}
+</div>
   )
 }
